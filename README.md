@@ -1,6 +1,7 @@
 Chopper, proyecto base ruby
 ===========================
 
+Repositorio Personal Matias Delgado.
 
 ## Preparación del ambiente
 
