@@ -1,3 +1,7 @@
+require 'rspec' 
+require_relative '../model/MaquinaExpendedoraDeBebidas'
+require_relative '../model/Vaso'
+
 describe MaquinaExpendedoraDeBebidas do
   let(:un_vaso) { Vaso.new }
   
