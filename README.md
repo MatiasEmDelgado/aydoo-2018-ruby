@@ -1,6 +1,8 @@
 Chopper, proyecto base ruby
 ===========================
 
+[![Build Status](https://travis-ci.org/Matuchinn/aydoo-2018-ruby.svg?branch=master)](https://travis-ci.org/Matuchinn/aydoo-2018-ruby)
+
 Repositorio Personal Matias Delgado.
 
 ## Preparación del ambiente
