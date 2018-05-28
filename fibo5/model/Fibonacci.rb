@@ -5,7 +5,6 @@ class Fibonacci
   	second = 1
   	third = 0
     arrayFibonacciValues = Array.new()
-    #arrayFibonacciValues.inject([0, 1]) {|fib| fib << fib.last(2).inject(:+)}
     n.times do
     	arrayFibonacciValues.push(third)
     	first= second
@@ -15,4 +14,11 @@ class Fibonacci
     arrayFibonacciValues
   end
 
+  #def fibonacciProgretion(n)
+  #	i = 0
+  #	n.times do
+  #		getFibonacciTil(i)
+  #		i+=1
+  #	end
+  #end
 end
