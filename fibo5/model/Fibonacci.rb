@@ -1,6 +1,6 @@
 class Fibonacci
 
-  def getFibonacciTil(n)
+  def get_fibonacci_til(n)
   	first = 0
   	second = 1
   	third = 0
@@ -14,11 +14,8 @@ class Fibonacci
     arrayFibonacciValues
   end
 
-  #def fibonacciProgretion(n)
-  #	i = 0
-  #	n.times do
-  #		getFibonacciTil(i)
-  #		i+=1
-  #	end
-  #end
+  def get_inverted_fibonacci(n)
+    get_fibonacci_til(n).reverse
+  end	
+
 end
