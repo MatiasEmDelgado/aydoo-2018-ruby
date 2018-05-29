@@ -11,4 +11,10 @@ get '/fibonacci/:numero' do
   	fibonacciList = fibonacci.get_fibonacci_til(numero)
   end	
   json({"fibonacci": { "limite": numero, "lista": fibonacciList} })
+end  
+
+get '/fibonacci/:numero/sumatoria' do	
+  numero = params[:numero].to_i
+  fibonacci = Fibonacci.new
+  json({"fibonacci": { "limite": numero, "sumatoria": fibonacci.get_fibonacci_sum(numero)} })
 end

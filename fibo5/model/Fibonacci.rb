@@ -16,6 +16,10 @@ class Fibonacci
 
   def get_inverted_fibonacci(n)
     get_fibonacci_til(n).reverse
-  end	
+  end
+
+  def get_fibonacci_sum(n)
+    get_fibonacci_til(n).inject(0){|sum,x| sum + x }
+  end  
 
 end
