@@ -20,6 +20,10 @@ end
 
 get '/fibonacci/:numero/sumatoria' do	
   numero = params[:numero].to_i
-  fibonacci = Fibonacci.new
+  if (params[:solo].to_s == 'pares')
+    fibonacci = EvenFibonacci.new
+  else	
+    fibonacci = Fibonacci.new
+  end
   json({"fibonacci": { "limite": numero, "sumatoria": fibonacci.get_fibonacci_sum(numero)} })
 end
