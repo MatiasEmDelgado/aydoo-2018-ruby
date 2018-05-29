@@ -52,5 +52,16 @@ describe 'Aplicacion Sinatra' do
      expect(cuerpo_parseado['fibonacci']['limite']).to eq 8
      expect(cuerpo_parseado['fibonacci']['lista']).to eq [2, 8]
    end
-  end 
+  end
+  
+  describe '/fibonacci/8?sentido=inverso&solo=pares' do
+   it 'Deberia devolver un json con los numeros pares entre los primeros 5 numeros de la sucecion de Fibonacci en orden inverso' do
+     get '/fibonacci/8?sentido=inverso&solo=pares'
+
+     expect(last_response).to be_ok
+     cuerpo_parseado = JSON.parse(last_response.body)
+     expect(cuerpo_parseado['fibonacci']['limite']).to eq 8
+     expect(cuerpo_parseado['fibonacci']['lista']).to eq [8, 2]
+   end
+  end
 end
