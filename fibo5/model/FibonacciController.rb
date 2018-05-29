@@ -4,7 +4,12 @@ require 'sinatra/json'
 
 get '/fibonacci/:numero' do	
   numero = params[:numero].to_i
-  fibonacci = Fibonacci.new
+  if (params[:solo].to_s == 'pares')
+    fibonacci = EvenFibonacci.new
+  else	
+    fibonacci = Fibonacci.new
+  end
+
   if (params[:sentido].to_s == 'inverso')
     fibonacciList = fibonacci.get_inverted_fibonacci(numero)
   else 
