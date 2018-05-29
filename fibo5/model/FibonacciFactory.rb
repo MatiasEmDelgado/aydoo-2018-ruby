@@ -1,4 +1,5 @@
 require_relative '../model/Fibonacci'
+require_relative '../model/EvenFibonacci'
 
 class FibonacciFactory
 
