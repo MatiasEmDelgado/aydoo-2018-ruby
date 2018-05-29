@@ -1,15 +1,10 @@
-require_relative '../model/Fibonacci'
+require_relative '../model/FibonacciFactory'
 require 'sinatra'
 require 'sinatra/json'
 
 get '/fibonacci/:numero' do	
   numero = params[:numero].to_i
-  if (params[:solo].to_s == 'pares')
-    fibonacci = EvenFibonacci.new
-  else	
-    fibonacci = Fibonacci.new
-  end
-
+  fibonacci = FibonacciFactory.get_Fibonacci_instance(params[:solo].to_s)
   if (params[:sentido].to_s == 'inverso')
     fibonacciList = fibonacci.get_inverted_fibonacci(numero)
   else 
@@ -20,10 +15,6 @@ end
 
 get '/fibonacci/:numero/sumatoria' do	
   numero = params[:numero].to_i
-  if (params[:solo].to_s == 'pares')
-    fibonacci = EvenFibonacci.new
-  else	
-    fibonacci = Fibonacci.new
-  end
+  fibonacci = FibonacciFactory.get_Fibonacci_instance(params[:solo].to_s)
   json({"fibonacci": { "limite": numero, "sumatoria": fibonacci.get_fibonacci_sum(numero)} })
 end
