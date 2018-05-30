@@ -76,4 +76,13 @@ describe 'Aplicacion Sinatra' do
    end
   end
 
+  describe '/fibonacci/8?solo=passres' do
+   it 'Deberia redireccionar al endpoint de error ya que el parametro solo es incorrecto' do
+     get '/fibonacci/8?solo=passres'
+     expect(last_response.redirect?).to be_truthy
+     #expect(last_response).to be_bad_request
+     #cuerpo_parseado = JSON.parse(last_response.body)
+     #expect(cuerpo_parseado['error']).to eq 'Opción no válida'
+   end
+  end
 end
