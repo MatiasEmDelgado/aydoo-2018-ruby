@@ -9,5 +9,9 @@ describe 'validator' do
   	params = {solo:'pares'}
     expect(validator.validate_params(params)).to be_truthy
   end  
-
+  
+  it 'El parametro sentido con valor inverso deberia ser valido' do
+   params = {sentido:'inverso'}
+   expect(validator.validate_params(params)).to be_truthy
+  end
 end

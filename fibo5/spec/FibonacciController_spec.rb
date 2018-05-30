@@ -75,4 +75,5 @@ describe 'Aplicacion Sinatra' do
      expect(cuerpo_parseado['fibonacci']['sumatoria']).to eq 10
    end
   end
+
 end
