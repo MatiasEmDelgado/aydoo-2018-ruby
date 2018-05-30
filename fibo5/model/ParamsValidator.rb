@@ -6,7 +6,7 @@ class ParamsValidator
   end
 
   def validate_params(params)
-    validate_solo(params[:solo].to_s) && validate_direction(params[:sentido].to_s)
+    validate_solo(params[:solo].to_s) && validate_direction(params[:sentido].to_s) && validate_n(params[:numero].to_i)
   end
 
   def validate_solo(solo)
@@ -15,5 +15,9 @@ class ParamsValidator
 
  def validate_direction(direction)
    @valid_directions.include? direction
+  end
+
+  def validate_n(n)
+  	n != 0
   end
 end
