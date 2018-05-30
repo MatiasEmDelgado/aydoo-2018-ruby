@@ -20,7 +20,10 @@ require 'sinatra/json'
   end
 end
 
-get '/fibonacci/:numero/sumatoria' do	
+get '/fibonacci/:numero/sumatoria' do
+  unless (ParamsValidator.new.validate_params(params))
+      redirect '/error'
+    end
   numero = params[:numero].to_i
   fibonacci = FibonacciFactory.get_Fibonacci_instance(params[:solo].to_s)
   json({"fibonacci": { "limite": numero, "sumatoria": fibonacci.get_fibonacci_sum(numero)} })

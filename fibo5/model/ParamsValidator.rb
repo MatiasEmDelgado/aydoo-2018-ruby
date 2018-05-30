@@ -9,6 +9,10 @@ class ParamsValidator
     validate_solo(params[:solo].to_s) && validate_direction(params[:sentido].to_s) && validate_n(params[:numero].to_i)
   end
 
+  def validate_params_for_sum(params)
+    validate_solo(params[:solo].to_s) && validate_n(params[:numero].to_i)
+  end
+
   def validate_solo(solo)
     @valid_solo.include? solo
   end

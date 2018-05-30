@@ -102,9 +102,28 @@ describe 'Aplicacion Sinatra' do
    it 'Deberia redireccionar al endpoint de error ya que el parametro solo es incorrecto' do
      get '/fibonacci/8?solo=passres'
      expect(last_response.redirect?).to be_truthy
-     #expect(last_response).to be_bad_request
-     #cuerpo_parseado = JSON.parse(last_response.body)
-     #expect(cuerpo_parseado['error']).to eq 'Opción no válida'
    end
   end
+
+  describe '/fibonacci/8/sumatoria?solo=parreres' do
+   it 'Deberia redireccionar al endpoint de error ya que el parametro solo es incorrecto cuando se requiere la sumatoria' do
+     get '/fibonacci/8/sumatoria?solo=parreres'
+     expect(last_response.redirect?).to be_truthy
+   end
+  end
+
+  describe '/fibonacci/hola/sumatoria?solo=pares' do
+    it 'Deberia redireccionar al endpoint de error ya que no se pasa un numero en la sumatoria' do
+      get '/fibonacci/hola/sumatoria?solo=pares'
+      expect(last_response.redirect?).to be_truthy
+    end
+  end
+
+  describe '/fibonacci/hola' do
+    it 'Deberia redireccionar al endpoint de error ya que no se pasa un numero para el calculo de Fibonacci' do
+      get '/fibonacci/hola'
+      expect(last_response.redirect?).to be_truthy
+    end
+  end
+
 end

@@ -24,4 +24,20 @@ describe 'validator' do
    params = {numero:'hola'}
    expect(validator.validate_n(params[:numero].to_i)).to be_falsey
   end
+
+  it 'El parametro n con valor 6 deberia ser valido en caso de sumatoria' do
+   params = {numero:'6'}
+   expect(validator.validate_params_for_sum(params)).to be_truthy
+  end
+
+  it 'El parametro n con valor 6, y el parametro solo con valor pares deberia ser valido en caso de sumatoria' do
+   params = {numero:'6', solo:'pares'}
+   expect(validator.validate_params_for_sum(params)).to be_truthy
+  end
+
+  it 'El parametro n con valor 6, y el parametro solo con valor pwareees deberia ser invalido en caso de sumatoria' do
+   params = {numero:'6', solo:'pwareees'}
+   expect(validator.validate_params_for_sum(params)).to be_falsey
+  end
+
 end
